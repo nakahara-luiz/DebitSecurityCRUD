@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "DebitSecurity.Database/1.0.0": {
+        "runtime": {
+          "DebitSecurity.Database.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DebitSecurity.Database/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

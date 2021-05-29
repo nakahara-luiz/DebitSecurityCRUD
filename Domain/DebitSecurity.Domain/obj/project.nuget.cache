@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "b3PdHudWhaRfJvvuOpE6pgAANIodmljoCd7V6z3PLtoPsyxxYosARRioYL0Mlr2vRgYMQ9Fq/W+gW3ywEcsTqw==",
+  "success": true,
+  "projectFilePath": "C:\\git\\DebitSecurityCRUD\\Domain\\DebitSecurity.Domain\\DebitSecurity.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Luiz Nakahara\\.nuget\\packages\\fluentvalidation\\10.2.0\\fluentvalidation.10.2.0.nupkg.sha512",
+    "C:\\Users\\Luiz Nakahara\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.2.0\\fluentvalidation.aspnetcore.10.2.0.nupkg.sha512",
+    "C:\\Users\\Luiz Nakahara\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.2.0\\fluentvalidation.dependencyinjectionextensions.10.2.0.nupkg.sha512",
+    "C:\\Users\\Luiz Nakahara\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

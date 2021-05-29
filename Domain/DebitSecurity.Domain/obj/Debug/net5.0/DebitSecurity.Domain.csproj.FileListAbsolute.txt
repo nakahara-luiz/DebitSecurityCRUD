@@ -1,0 +1,5 @@
+C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\obj\Debug\net5.0\DebitSecurity.Domain.csproj.AssemblyReference.cache
+C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\obj\Debug\net5.0\DebitSecurity.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\obj\Debug\net5.0\DebitSecurity.Domain.AssemblyInfoInputs.cache
+C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\obj\Debug\net5.0\DebitSecurity.Domain.AssemblyInfo.cs
+C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\obj\Debug\net5.0\DebitSecurity.Domain.csproj.CoreCompileInputs.cache

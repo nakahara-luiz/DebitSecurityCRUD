@@ -1,0 +1,12 @@
+C:\git\DebitSecurityCRUD\Infra\DebitSecurity.Database\bin\Debug\net5.0\DebitSecurity.Database.deps.json
+C:\git\DebitSecurityCRUD\Infra\DebitSecurity.Database\bin\Debug\net5.0\DebitSecurity.Database.dll
+C:\git\DebitSecurityCRUD\Infra\DebitSecurity.Database\bin\Debug\net5.0\ref\DebitSecurity.Database.dll
+C:\git\DebitSecurityCRUD\Infra\DebitSecurity.Database\bin\Debug\net5.0\DebitSecurity.Database.pdb
+C:\git\DebitSecurityCRUD\Infra\DebitSecurity.Database\obj\Debug\net5.0\DebitSecurity.Database.csproj.AssemblyReference.cache
+C:\git\DebitSecurityCRUD\Infra\DebitSecurity.Database\obj\Debug\net5.0\DebitSecurity.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\DebitSecurityCRUD\Infra\DebitSecurity.Database\obj\Debug\net5.0\DebitSecurity.Database.AssemblyInfoInputs.cache
+C:\git\DebitSecurityCRUD\Infra\DebitSecurity.Database\obj\Debug\net5.0\DebitSecurity.Database.AssemblyInfo.cs
+C:\git\DebitSecurityCRUD\Infra\DebitSecurity.Database\obj\Debug\net5.0\DebitSecurity.Database.csproj.CoreCompileInputs.cache
+C:\git\DebitSecurityCRUD\Infra\DebitSecurity.Database\obj\Debug\net5.0\DebitSecurity.Database.dll
+C:\git\DebitSecurityCRUD\Infra\DebitSecurity.Database\obj\Debug\net5.0\ref\DebitSecurity.Database.dll
+C:\git\DebitSecurityCRUD\Infra\DebitSecurity.Database\obj\Debug\net5.0\DebitSecurity.Database.pdb
