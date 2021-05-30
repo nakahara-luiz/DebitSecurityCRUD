@@ -1,0 +1,8 @@
+{
+  "debit-security-number": "Número do título",
+  "client-name": "Nome do devedor",
+  "number-installments": "Qtde de parcelas",
+  "original-value": "Valor original",
+  "days-overdue": "Dias em atraso",
+  "actual-value": "Valor atualizado na data de hoje"
+}
