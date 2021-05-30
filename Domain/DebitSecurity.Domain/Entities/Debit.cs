@@ -4,10 +4,10 @@ namespace DebitSecurity.Domain.Entities
 {
     public class Debit: BaseEntity
     {
-        public long Penalty { get; set; }
-        public long Interest { get; set; }
+        public int Penalty { get; set; }
+        public int Interest { get; set; }
         public IList<Installment> Installments { get; set; }
-        public Document Document { get; set; }
         public int DocumentId { get; set; }
+        public Document Document { get; set; }
     }
 }
