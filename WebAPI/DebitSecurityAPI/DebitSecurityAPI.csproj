@@ -8,4 +8,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infra\DebitSecurity.Database\DebitSecurity.Database.csproj" />
+    <ProjectReference Include="..\..\Domain\DebitSecurity.Domain\DebitSecurity.Domain.csproj" />
+    <ProjectReference Include="..\..\Infra\DebitSecurity.Interface\DebitSecurity.Interface.csproj" />
+  </ItemGroup>
+
 </Project>
