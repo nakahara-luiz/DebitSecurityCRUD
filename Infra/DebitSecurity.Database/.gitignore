@@ -3,5 +3,3 @@ obj
 *.dll
 *.pdb
 bin
-*.cache
-*.suo
