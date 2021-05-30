@@ -3,3 +3,10 @@ C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\obj\Debug\net5.0\DebitSecur
 C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\obj\Debug\net5.0\DebitSecurity.Domain.AssemblyInfoInputs.cache
 C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\obj\Debug\net5.0\DebitSecurity.Domain.AssemblyInfo.cs
 C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\obj\Debug\net5.0\DebitSecurity.Domain.csproj.CoreCompileInputs.cache
+C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\bin\Debug\net5.0\DebitSecurity.Domain.deps.json
+C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\bin\Debug\net5.0\DebitSecurity.Domain.dll
+C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\bin\Debug\net5.0\ref\DebitSecurity.Domain.dll
+C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\bin\Debug\net5.0\DebitSecurity.Domain.pdb
+C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\obj\Debug\net5.0\DebitSecurity.Domain.dll
+C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\obj\Debug\net5.0\ref\DebitSecurity.Domain.dll
+C:\git\DebitSecurityCRUD\Domain\DebitSecurity.Domain\obj\Debug\net5.0\DebitSecurity.Domain.pdb

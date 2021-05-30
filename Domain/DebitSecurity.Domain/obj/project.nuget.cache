@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b3PdHudWhaRfJvvuOpE6pgAANIodmljoCd7V6z3PLtoPsyxxYosARRioYL0Mlr2vRgYMQ9Fq/W+gW3ywEcsTqw==",
+  "dgSpecHash": "twygNS3YIYO9sM3EdRtJX8WjvhV1Nwtr68Q2Q/AeCYsRigk/UxjiQ7CitkFinMqSmwOs9+Vfmzz2IwQEnI6rMg==",
   "success": true,
-  "projectFilePath": "C:\\git\\DebitSecurityCRUD\\Domain\\DebitSecurity.Domain\\DebitSecurity.Domain.csproj",
+  "projectFilePath": "c:\\git\\DebitSecurityCRUD\\Domain\\DebitSecurity.Domain\\DebitSecurity.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Luiz Nakahara\\.nuget\\packages\\fluentvalidation\\10.2.0\\fluentvalidation.10.2.0.nupkg.sha512",
     "C:\\Users\\Luiz Nakahara\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.2.0\\fluentvalidation.aspnetcore.10.2.0.nupkg.sha512",
