@@ -2,6 +2,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Domain\DebitSecurity.Domain\DebitSecurity.Domain.csproj" />
+    <ProjectReference Include="..\..\Infra\DebitSecurity.Interface\DebitSecurity.Interface.csproj" />
+    <ProjectReference Include="..\..\Infra\DebitSecurity.Crosscutting\DebitSecurity.Crosscutting.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

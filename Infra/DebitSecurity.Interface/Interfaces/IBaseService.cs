@@ -6,14 +6,14 @@ namespace DebitSecurity.Interface
 {
     public interface IBaseService<TEntity> where TEntity : BaseEntity
     {
-        TEntity Add<TValidator>(TEntity obj) where TValidator : AbstractValidator<TEntity>;
+        void Add(TEntity obj);
 
         void Delete(int id);
 
         IList<TEntity> Get();
 
-        TEntity GetById(int id);
+        TEntity Get(int id);
 
-        TEntity Update<TValidator>(TEntity obj) where TValidator : AbstractValidator<TEntity>;
+        void Update(TEntity obj);
     }
 }

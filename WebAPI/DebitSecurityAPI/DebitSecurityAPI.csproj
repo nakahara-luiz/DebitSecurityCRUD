@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.6">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
@@ -12,6 +16,7 @@
     <ProjectReference Include="..\..\Infra\DebitSecurity.Database\DebitSecurity.Database.csproj" />
     <ProjectReference Include="..\..\Domain\DebitSecurity.Domain\DebitSecurity.Domain.csproj" />
     <ProjectReference Include="..\..\Infra\DebitSecurity.Interface\DebitSecurity.Interface.csproj" />
+    <ProjectReference Include="..\..\Service\DebitSecurity.Service\DebitSecurity.Service.csproj" />
   </ItemGroup>
 
 </Project>

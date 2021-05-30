@@ -1,5 +1,5 @@
 using DebitSecurity.Domain.Entities;
-using DebitSecurity.Interface.Interfaces;
+using DebitSecurity.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DebitSecurityAPI.Controllers
@@ -8,9 +8,9 @@ namespace DebitSecurityAPI.Controllers
     [ApiController]
     public class DebitSecurityController: BaseController
     {
-        public readonly IDocumentRepository _service;
+        public readonly IBaseService<Document> _service;
 
-        public DebitSecurityController(IDocumentRepository service)
+        public DebitSecurityController(IBaseService<Document> service)
         {
             _service = service;
         }
@@ -22,12 +22,21 @@ namespace DebitSecurityAPI.Controllers
 
         [HttpGet("{IdDocument}")]
         public IActionResult Get(int IdDocument) {
-            return Execute(() => _service.GetById(IdDocument));
+            return Execute(() => _service.Get(IdDocument));
         }
 
         [HttpPost("")]
         public IActionResult Post([FromBody] Document model) {
+            return null;//Execute(() => _service.Add<>(model));
+        }
 
+        [HttpPut("{IdDocument}")]
+        public IActionResult Put(int IdDocument, [FromBody] Document model) {
+            return null;//Execute(() => _service.Add<>(model));
+        }
+
+        [HttpDelete("{IdDocument}")]
+        public IActionResult Put(int IdDocument) {
             return null;//Execute(() => _service.Add<>(model));
         }
     }

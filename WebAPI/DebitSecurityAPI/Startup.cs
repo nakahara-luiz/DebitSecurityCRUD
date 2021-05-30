@@ -6,6 +6,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
+using DebitSecurity.Interface.Interfaces;
+using DebitSecurity.Interface;
+using DebitSecurity.Service.services;
+using DebitSecurity.Domain.Entities;
+using DebitSecurity.Database.Repository;
 
 namespace DebitSecurityAPI
 {
@@ -24,7 +29,10 @@ namespace DebitSecurityAPI
             services.AddDbContext<DebitSecurityDbContext>(
                 x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
-            services.AddCors();
+            
+            services.AddScoped<IDocumentRepository, DocumentRepository>();
+            services.AddScoped<IBaseService<Document>, DebitSecurityService>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

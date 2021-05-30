@@ -5,7 +5,7 @@ namespace DebitSecurity.Database.Context
 {
     public class DebitSecurityDbContext: DbContext
     {
-        public DebitSecurityDbContext(DbContextOptions<DebitSecurityDbContext> options) {}
+        public DebitSecurityDbContext(DbContextOptions<DebitSecurityDbContext> options): base(options) {}
 
         public DbSet<Person> Persons { get; set; }
         public DbSet<Installment> Installments { get; set; }
@@ -17,8 +17,8 @@ namespace DebitSecurity.Database.Context
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-NAKAHAR;Integrated Security=True;Initial Catalog=DebitSecurity");
         }*/
 
-        /*protected override void OnModelCreating(ModelBuilder modelBuilder) {
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
             base.OnModelCreating(modelBuilder);
-        }*/
+        }
     }
 }

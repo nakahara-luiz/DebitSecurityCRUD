@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using DebitSecurity.Database.Context;
 using DebitSecurity.Domain.Entities;
 using DebitSecurity.Interface;
@@ -16,7 +17,7 @@ namespace DebitSecurity.Database.Repository
             _sqlContext = sqlContext;
         }
 
-        public void Insert(TEntity obj)
+        public void Add(TEntity obj)
         {
             _sqlContext.Set<TEntity>().Add(obj);
             _sqlContext.SaveChanges();
@@ -40,17 +41,7 @@ namespace DebitSecurity.Database.Repository
         public TEntity Get(int id) =>
             _sqlContext.Set<TEntity>().Find(id);
 
-        public Document Add<TValidator>(Document obj) where TValidator : AbstractValidator<TEntity>
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Document GetById(int id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Document Update<TValidator>(Document obj) where TValidator : AbstractValidator<TEntity>
+        public Task<IList<Document>> GetComplete(int idDoc = 0)
         {
             throw new System.NotImplementedException();
         }
