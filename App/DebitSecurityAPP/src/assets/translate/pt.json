@@ -4,5 +4,6 @@
   "number-installments": "Qtde de parcelas",
   "original-value": "Valor original",
   "days-overdue": "Dias em atraso",
-  "actual-value": "Valor atualizado na data de hoje"
+  "actual-value": "Valor atualizado",
+  "add-debit-security": "Incluir Título"
 }

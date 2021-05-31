@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using DebitSecurity.Database.Context;
 using DebitSecurity.Domain.Entities;
 using DebitSecurity.Interface;
-using FluentValidation;
 
 namespace DebitSecurity.Database.Repository
 {
@@ -17,16 +16,20 @@ namespace DebitSecurity.Database.Repository
             _sqlContext = sqlContext;
         }
 
-        public void Add(TEntity obj)
+        public TEntity Add(TEntity obj)
         {
             _sqlContext.Set<TEntity>().Add(obj);
             _sqlContext.SaveChanges();
+
+            return obj;
         }
 
-        public void Update(TEntity obj)
+        public TEntity Update(TEntity obj)
         {
             _sqlContext.Entry(obj).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _sqlContext.SaveChanges();
+
+            return obj;
         }
 
         public void Delete(int id)
@@ -40,10 +43,5 @@ namespace DebitSecurity.Database.Repository
 
         public TEntity Get(int id) =>
             _sqlContext.Set<TEntity>().Find(id);
-
-        public Task<IList<Document>> GetComplete(int idDoc = 0)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

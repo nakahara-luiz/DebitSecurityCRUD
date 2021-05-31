@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using DebitSecurity.Domain.Entities;
 using DebitSecurity.Interface;
 using DebitSecurity.Interface.Interfaces;
@@ -15,9 +16,10 @@ namespace DebitSecurity.Service.services
 
         public IDocumentRepository _docRepository { get; }
 
-        public void Add(Document obj)
+        public Document Add(Document obj)
         {
             _docRepository.Add(obj);
+            return obj;
         }
 
         public void Delete(int id)
@@ -25,23 +27,24 @@ namespace DebitSecurity.Service.services
             _docRepository.Delete(id);
         }
 
-        public IList<Document> Get()
+        public async Task<IList<Document>> Get()
         {
-            return _docRepository.GetMock();
+            return await _docRepository.GetComplete();
         }
 
-        public Document Get(int id)
+        public async Task<Document> Get(int id)
         {
-            return _docRepository.Get(id);
+            return await _docRepository.GetComplete(id);
         }
 
-        public void Update(Document obj)
+        public Document Update(Document obj)
         {
             var existentDoc = _docRepository.Get(obj.Id);
             if (existentDoc == null || existentDoc.Id == 0)
                 throw new NotImplementedException("Documento não identificado!");
 
             _docRepository.Update(obj);
+            return obj;
         }
     }
 }

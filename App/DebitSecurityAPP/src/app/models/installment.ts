@@ -1,4 +1,7 @@
 export class Installment {
-  Number!: number;
+  InstallmentNumber!: number;
   Value!: number;
+  DueDate!: string;
+  DebitId!: number;
+  Id!: number;
 }

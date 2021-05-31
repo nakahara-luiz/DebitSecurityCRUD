@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Domain\DebitSecurity.Domain\DebitSecurity.Domain.csproj" />
+    <ProjectReference Include="..\DebitSecurity.DTO\DebitSecurity.DTO.csproj" />
   </ItemGroup>
 
   <ItemGroup>

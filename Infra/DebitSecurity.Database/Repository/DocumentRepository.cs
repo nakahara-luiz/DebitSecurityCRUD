@@ -16,16 +16,6 @@ namespace DebitSecurity.Database.Repository
         {
         }
 
-        public void Add<TValidator>(Document obj) where TValidator : AbstractValidator<Document>
-        {
-            throw new NotImplementedException();
-        }
-
-        public Document GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public IList<Document> GetMock() {
             return new List<Document> {
                 new Document {
@@ -69,12 +59,18 @@ namespace DebitSecurity.Database.Repository
             };
         }
 
-        public void Update<TValidator>(Document obj) where TValidator : AbstractValidator<Document>
-        {
-            _sqlContext.Update(obj);
+        public async Task<IList<Document>> GetComplete() {
+            IQueryable<Document> query = _sqlContext.DebitSecurities
+                .Include(ds => ds.Customer)
+                .Include(ds => ds.Debit)
+                .ThenInclude(d => d.Installments);
+
+            query = query.OrderByDescending(d => d.DocumentNumber);
+
+            return await query.ToArrayAsync();
         }
 
-        public async Task<IList<Document>> GetComplete(int idDoc = 0){
+        public async Task<Document> GetComplete(int idDoc = 0){
             IQueryable<Document> query = _sqlContext.DebitSecurities
                 .Include(ds => ds.Customer)
                 .Include(ds => ds.Debit)
@@ -83,7 +79,7 @@ namespace DebitSecurity.Database.Repository
             query = query.OrderByDescending(d => d.DocumentNumber)
                 .Where(d => idDoc > 0 && d.Id == idDoc);
 
-            return await query.ToArrayAsync();
+            return await query.FirstOrDefaultAsync();
         }
     }
 }

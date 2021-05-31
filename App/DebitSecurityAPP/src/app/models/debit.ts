@@ -1,7 +1,13 @@
-import { Installment } from "./Installment";
+import { Installment } from "./installment";
 
 export class Debit {
-  Penalty!: string;
-  Interest!: string;
+  Penalty!: number;
+  Interest!: number;
+  NumberInstalments!: number;
+  OriginalValue!: number;
+  DaysOverdue!: number;
+  ActualValue!: number;
   Installments!: Installment[];
+  DocumentId!: number;
+  Id!: number;
 }

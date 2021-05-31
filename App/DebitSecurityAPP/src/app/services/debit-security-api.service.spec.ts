@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DebitSecurityAPIServiceService } from './debit-security-apiservice.service';
+import { DebitSecurityAPIService } from './debit-security-api.service';
 
 describe('DebitSecurityAPIServiceService', () => {
-  let service: DebitSecurityAPIServiceService;
+  let service: DebitSecurityAPIService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DebitSecurityAPIServiceService);
+    service = TestBed.inject(DebitSecurityAPIService);
   });
 
   it('should be created', () => {

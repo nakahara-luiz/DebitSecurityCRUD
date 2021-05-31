@@ -29,7 +29,10 @@ namespace DebitSecurityAPI
             services.AddDbContext<DebitSecurityDbContext>(
                 x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
-            
+            services.AddCors();
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             services.AddScoped<IDocumentRepository, DocumentRepository>();
             services.AddScoped<IBaseService<Document>, DebitSecurityService>();
 
@@ -49,11 +52,8 @@ namespace DebitSecurityAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DebitSecurityAPI v1"));
             }
-
-            app.UseCors();
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseRouting();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

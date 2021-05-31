@@ -6,7 +6,8 @@ namespace DebitSecurity.Interface.Interfaces
 {
     public interface IDocumentRepository: IBaseRepository<Document>
     {
-         Task<IList<Document>> GetComplete(int idDoc = 0);
+         Task<IList<Document>> GetComplete();
+         Task<Document> GetComplete(int idDoc = 0);
 
          IList<Document> GetMock();
     }

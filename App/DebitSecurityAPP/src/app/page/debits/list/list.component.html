@@ -1,4 +1,7 @@
-<div class="mat-elevation-z8" >
+<div class="d-flex" >
+  <div class="example-button-row">
+    <button mat-flat-button color="primary">{{ 'add-debit-security' | translate}}</button>
+  </div>
   <form [formGroup]="filtersForm">
     <mat-form-field>
       <mat-label>{{ 'client-name' | translate}}</mat-label>
@@ -9,44 +12,42 @@
       <input matInput formControlname="debitSecurityNumber">
     </mat-form-field>
   </form>
-  <table mat-table [dataSource]="dataSource">
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
+  <mat-divider></mat-divider>
+  <table mat-table [dataSource]="debitSecurities" *ngIf="debitSecurities">
+    <ng-container matColumnDef="debit-security-number">
       <th mat-header-cell *matHeaderCellDef> {{ 'debit-security-number' | translate }} </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.DocumentNumber}} </td>
     </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
+    <ng-container matColumnDef="client-name">
       <th mat-header-cell *matHeaderCellDef> {{ 'client-name' | translate }} </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.CustomerName}} </td>
     </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
+    <ng-container matColumnDef="number-installments">
       <th mat-header-cell *matHeaderCellDef> {{ 'number-installments' | translate }} </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.NumberInstallments}} </td>
     </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
+    <ng-container matColumnDef="original-value">
       <th mat-header-cell *matHeaderCellDef> {{ 'original-value' | translate }} </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.OriginalValue}} </td>
     </ng-container>
-
-    <ng-container matColumnDef="symbo">
+    <ng-container matColumnDef="days-overdue">
       <th mat-header-cell *matHeaderCellDef> {{ 'days-overdue' | translate }} </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.DaysOverDue}} </td>
     </ng-container>
-
-    <ng-container matColumnDef="symb">
+    <ng-container matColumnDef="actual-value">
       <th mat-header-cell *matHeaderCellDef> {{ 'actual-value' | translate }} </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.ActualValue}} </td>
     </ng-container>
-
+    <ng-container matColumnDef="action-edit">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-mini-fab color="primary" aria-label="{ 'tfhhtehr' | translate}" (click)="edit(element.Id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>

@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  debitSecurityAPI: 'http://localhost:/api'
+  debitSecurityAPI: 'http://localhost:5000/api'
 };
