@@ -11,9 +11,9 @@ namespace DebitSecurity.Interface
 
         void Delete(Guid id);
 
-        Task<IList<TEntity>> Get();
+        IList<TEntity> Get();
 
-        Task<TEntity> Get(Guid id);
+        TEntity Get(Guid id);
 
         TEntity Update(TEntity obj);
     }

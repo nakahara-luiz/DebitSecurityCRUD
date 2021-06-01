@@ -4,6 +4,5 @@ namespace DebitSecurity.Interface.Interfaces
 {
     public interface IInstallmentRepository: IBaseRepository<Installment>
     {
-         
     }
 }

@@ -6,16 +6,16 @@ using DebitSecurity.Interface.Interfaces;
 
 namespace DebitSecurity.Service.services
 {
-    public class DebitSecurityService : BaseService<IDebitRepository, Debit>, IDebitService
+    public class InstallmentService : BaseService<IInstallmentRepository, Installment>, IInstallmentService
     {
-        public DebitSecurityService(IDebitRepository docRepository): base(docRepository) {}
+        public InstallmentService(IInstallmentRepository repository): base(repository) {}
 
-        public async Task<IList<Debit>> GetComplete()
+        public async Task<IList<Installment>> GetComplete()
         {
             return await _repository.GetComplete();
         }
 
-        public async Task<Debit> GetComplete(Guid id)
+        public async Task<Installment> GetComplete(Guid id)
         {
             return await _repository.GetComplete(id);
         }
