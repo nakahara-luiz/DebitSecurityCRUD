@@ -36,11 +36,14 @@ namespace DebitSecurityAPI
             services.AddScoped<IDebitRepository, DebitRepository>();
             services.AddScoped<IDebitService, DebitSecurityService>();
 
+            services.AddScoped<IInstallmentRepository, InstallmentRepository>();
+            services.AddScoped<IInstallmentService, InstallmentService>();
+
+            services.AddScoped<IPersonRepository, PersonRepository>();
+            services.AddScoped<IPersonService, PersonService>();
+
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "DebitSecurityAPI", Version = "v1" });
-            });
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "DebitSecurityAPI", Version = "v1" }); });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
