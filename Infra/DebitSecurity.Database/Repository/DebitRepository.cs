@@ -15,7 +15,7 @@ namespace DebitSecurity.Database.Repository
         {
         }
 
-        public async Task<IList<Debit>> GetComplete() {
+        public override async Task<IList<Debit>> GetComplete() {
             IQueryable<Debit> query = _sqlContext.Debits
                 .Include(ds => ds.Person)
                 .Include(d => d.Installments);
@@ -25,14 +25,14 @@ namespace DebitSecurity.Database.Repository
             return await query.ToArrayAsync();
         }
 
-        public async Task<Debit> GetComplete(Guid id)
+        public override async Task<Debit> GetComplete(Guid id)
         {
             IQueryable<Debit> query = _sqlContext.Debits
                 .Include(ds => ds.Person)
                 .Include(d => d.Installments);
 
             query = query.OrderByDescending(d => d.SecurityNumber)
-                .Where(d => d.Id.Equals(id));
+                .Where(d => d.Id == id);
 
             return await query.FirstOrDefaultAsync();
         }

@@ -44,5 +44,15 @@ namespace DebitSecurity.Database.Repository
 
         public TEntity Get(Guid id) =>
             _sqlContext.Set<TEntity>().Find(id);
+
+        public virtual Task<IList<TEntity>> GetComplete()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual Task<TEntity> GetComplete(Guid id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
