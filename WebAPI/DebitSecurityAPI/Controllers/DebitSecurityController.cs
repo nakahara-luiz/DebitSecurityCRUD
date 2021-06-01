@@ -11,10 +11,10 @@ namespace DebitSecurityAPI.Controllers
     [ApiController]
     public class DebitSecurityController: BaseController
     {
-        private readonly IBaseService<Debit> _service;
+        private readonly IDebitService _service;
         private readonly IDebitSecurityCalculatorService _debitSecurityCalculator;
 
-        public DebitSecurityController(IBaseService<Debit> service)
+        public DebitSecurityController(IDebitService service)
         {
             _service = service;
             _debitSecurityCalculator = new DebitSecurityCalculatorService();
@@ -23,7 +23,7 @@ namespace DebitSecurityAPI.Controllers
         [HttpGet]
         public IActionResult Get() {
             return Execute(() => {
-                var result = _service.Get();
+                var result = _service.GetComplete();
                 
                 return _debitSecurityCalculator.Calculate(result.Result);
             });
@@ -32,7 +32,7 @@ namespace DebitSecurityAPI.Controllers
         [HttpGet("{IdDebit}")]
         public IActionResult Get(Guid IdDebit) {
             return Execute(() => { 
-                var result =_service.Get(IdDebit);
+                var result =_service.GetComplete(IdDebit);
                 return result.Result;
             });
         }
