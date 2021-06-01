@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DebitSecurity.Crosscutting.Utils;
 using DebitSecurity.Domain.Entities;
 using DebitSecurity.DTO;
 using DebitSecurity.Interface.Interfaces;
@@ -9,6 +10,14 @@ namespace DebitSecurity.Service.services
 {
     public class DebitSecurityCalculatorService: IDebitSecurityCalculatorService
     {
+        private FeeUtils _feeUtils;
+        private DateTime _referenceDate;
+
+        public DebitSecurityCalculatorService(DateTime referenceDate = new DateTime())
+        {
+            _referenceDate = referenceDate;
+        }
+
         public IList<DebitSecurityResumeDTO> Calculate(IList<Debit> debitSecurity) {
             var resumes = new List<DebitSecurityResumeDTO>();
 
@@ -17,6 +26,7 @@ namespace DebitSecurity.Service.services
             
             return resumes;
         }
+
         public DebitSecurityResumeDTO Calculate(Debit debitSecurity) {
             if (debitSecurity == null) 
                 throw new Exception("Título de dívida não informado!");
@@ -29,10 +39,10 @@ namespace DebitSecurity.Service.services
             var penaltyFee = debitSecurity.Penalty;
             var interestFee = debitSecurity.Interest;
 
-            var penaltyValue = CalculateFee(penaltyFee, firstInstallment);
-            var interestValue = CalculateFee(interestFee, debitSecurity.Installments);
             var originalValue = debitSecurity.Installments.Sum(i => i.Value);
             var daysOverDue = (firstInstallment.DueDate - DateTime.Now).TotalDays;
+            var penaltyValue = _feeUtils.CalculateSingleInterestDiff(firstInstallment.Value, penaltyFee);
+            var interestValue = CalculateTotalInterest(debitSecurity.Installments, interestFee);
 
             return new DebitSecurityResumeDTO {
                 ActualValue = originalValue + penaltyValue + interestValue,
@@ -44,16 +54,18 @@ namespace DebitSecurity.Service.services
             };
         }
 
-        private int CalculateFee(double fee, IList<Installment> installments) {
-            return installments.Sum(i => CalculateFee(fee, i));
-        }
+        private double CalculateTotalInterest(IList<Installment> installments, double monthlyFee) {
+            double totalInterest = 0;
+            var dailyFee = _feeUtils.ConvertMonthlyToDaily(monthlyFee);
 
-        private int CalculateFee(double fee, Installment installment) {
-            //calcular juros compostos
-            var daysOverDue = 1;
-            var m = installment.Value * Math.Pow(1 + (fee / 100), daysOverDue);
+            foreach (var installment in installments)
+            {
+                var daysOverDue = (installment.DueDate - _referenceDate).TotalDays;
 
-            return 0;//installment.Value * (fee / 100);
+                totalInterest += _feeUtils.CalculateInterestDiff(installment.Value, dailyFee, daysOverDue);
+            }
+
+            return totalInterest;
         }
     }
 }
