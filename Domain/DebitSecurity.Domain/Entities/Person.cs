@@ -4,7 +4,5 @@ namespace DebitSecurity.Domain.Entities
     {
         public string Name { get; set; }   
         public string CPF { get; set; }
-        public int DocumentId { get; set; }
-        public Document Document { get; set; }
     }
 }

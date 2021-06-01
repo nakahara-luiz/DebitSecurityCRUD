@@ -1,5 +1,5 @@
+using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using DebitSecurity.Domain.Entities;
 
 namespace DebitSecurity.Interface
@@ -8,8 +8,8 @@ namespace DebitSecurity.Interface
     {
         TEntity Add(TEntity obj);
         TEntity Update(TEntity obj);
-        void Delete(int id);
+        void Delete(Guid id);
         IList<TEntity> Get();
-        TEntity Get(int id);
+        TEntity Get(Guid id);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DebitSecurity.Domain.Entities;
@@ -8,11 +9,11 @@ namespace DebitSecurity.Interface
     {
         TEntity Add(TEntity obj);
 
-        void Delete(int id);
+        void Delete(Guid id);
 
         Task<IList<TEntity>> Get();
 
-        Task<TEntity> Get(int id);
+        Task<TEntity> Get(Guid id);
 
         TEntity Update(TEntity obj);
     }

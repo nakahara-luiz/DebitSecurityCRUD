@@ -4,14 +4,16 @@ using DebitSecurity.Database.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DebitSecurity.Database.Migrations
 {
     [DbContext(typeof(DebitSecurityDbContext))]
-    partial class DebitSecurityDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210601011111_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

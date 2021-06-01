@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,7 +33,7 @@ namespace DebitSecurity.Database.Repository
             return obj;
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             _sqlContext.Set<TEntity>().Remove(Get(id));
             _sqlContext.SaveChanges();
@@ -41,7 +42,7 @@ namespace DebitSecurity.Database.Repository
         public IList<TEntity> Get() =>
             _sqlContext.Set<TEntity>().ToList();
 
-        public TEntity Get(int id) =>
+        public TEntity Get(Guid id) =>
             _sqlContext.Set<TEntity>().Find(id);
     }
 }

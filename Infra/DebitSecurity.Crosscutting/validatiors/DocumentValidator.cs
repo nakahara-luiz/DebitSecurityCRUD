@@ -4,12 +4,12 @@ using DebitSecurity.Crosscutting.Utils;
 
 namespace DebitSecurity.Crosscutting.validatiors
 {
-    public class DocumentValidator: AbstractValidator<Document>
+    public class DocumentValidator: AbstractValidator<Debit>
     {
         public DocumentValidator()
         {
             
-            RuleFor(p => p.DocumentNumber)
+            RuleFor(p => p.SecurityNumber)
                 .NotEmpty().WithMessage(ValidationMessages.RequiredField)
                 .NotNull().WithMessage(ValidationMessages.RequiredField);
         }

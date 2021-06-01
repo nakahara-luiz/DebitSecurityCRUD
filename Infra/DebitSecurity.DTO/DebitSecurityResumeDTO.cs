@@ -4,9 +4,9 @@ namespace DebitSecurity.DTO
     {
         public string DocumentNumber { get; set; }
         public string CustomerName { get; set; }
-        public int NumberInstallments { get; set; }
-        public int OriginalValue { get; set; }
-        public int DaysOverDue { get; set; }
-        public int ActualValue { get; set; }
+        public double NumberInstallments { get; set; }
+        public double OriginalValue { get; set; }
+        public double DaysOverDue { get; set; }
+        public double ActualValue { get; set; }
     }
 }

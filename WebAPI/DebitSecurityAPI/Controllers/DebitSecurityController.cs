@@ -1,5 +1,4 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using System;
 using DebitSecurity.Domain.Entities;
 using DebitSecurity.Interface;
 using DebitSecurity.Interface.Interfaces;
@@ -12,10 +11,10 @@ namespace DebitSecurityAPI.Controllers
     [ApiController]
     public class DebitSecurityController: BaseController
     {
-        private readonly IBaseService<Document> _service;
+        private readonly IBaseService<Debit> _service;
         private readonly IDebitSecurityCalculatorService _debitSecurityCalculator;
 
-        public DebitSecurityController(IBaseService<Document> service)
+        public DebitSecurityController(IBaseService<Debit> service)
         {
             _service = service;
             _debitSecurityCalculator = new DebitSecurityCalculatorService();
@@ -30,34 +29,34 @@ namespace DebitSecurityAPI.Controllers
             });
         }
 
-        [HttpGet("{IdDocument}")]
-        public IActionResult Get(int IdDocument) {
+        [HttpGet("{IdDebit}")]
+        public IActionResult Get(Guid IdDebit) {
             return Execute(() => { 
-                var result =_service.Get(IdDocument);
+                var result =_service.Get(IdDebit);
                 return result.Result;
             });
         }
 
         [HttpPost("")]
-        public IActionResult Post([FromBody] Document model) {
+        public IActionResult Post([FromBody] Debit model) {
             return Execute(() => {
                 _service.Add(model);
                 return model;
             });
         }
 
-        [HttpPut("{IdDocument}")]
-        public IActionResult Put(int IdDocument, [FromBody] Document model) {
+        [HttpPut("{IdDebit}")]
+        public IActionResult Put(int IdDebit, [FromBody] Debit model) {
             return Execute(() => {
                 _service.Update(model);
                 return true;
             });
         }
 
-        [HttpDelete("{IdDocument}")]
-        public IActionResult Delete(int IdDocument) {
+        [HttpDelete("{IdDebit}")]
+        public IActionResult Delete(Guid IdDebit) {
             return Execute(() => {
-                _service.Delete(IdDocument);
+                _service.Delete(IdDebit);
                 return true;
             });
         }

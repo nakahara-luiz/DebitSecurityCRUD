@@ -33,8 +33,8 @@ namespace DebitSecurityAPI
             services.AddControllersWithViews()
                 .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
-            services.AddScoped<IDocumentRepository, DocumentRepository>();
-            services.AddScoped<IBaseService<Document>, DebitSecurityService>();
+            services.AddScoped<IDebitRepository, DebitRepository>();
+            services.AddScoped<IDebitService, DebitSecurityService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
