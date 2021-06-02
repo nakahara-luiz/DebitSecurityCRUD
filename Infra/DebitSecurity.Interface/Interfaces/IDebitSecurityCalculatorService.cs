@@ -6,7 +6,7 @@ namespace DebitSecurity.Interface.Interfaces
 {
     public interface IDebitSecurityCalculatorService
     {
-        DebitSecurityResumeDTO Calculate(Debit debitSecurity);
-        IList<DebitSecurityResumeDTO> Calculate(IList<Debit> debitSecurity);
+        DebitResumeDTO Calculate(Debit debitSecurity);
+        IList<DebitResumeDTO> Calculate(IList<Debit> debitSecurity);
     }
 }

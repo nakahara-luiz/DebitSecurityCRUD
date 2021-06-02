@@ -42,6 +42,8 @@ namespace DebitSecurity.Service.services
             if (existentDoc == null || existentDoc.Id.Equals(Guid.Empty) || string.IsNullOrWhiteSpace(existentDoc.Id.ToString()))
                 throw new NotImplementedException("Registro Não identificado!");
 
+            existentDoc = obj;
+
             _repository.Update(obj);
             return obj;
         }

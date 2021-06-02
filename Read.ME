@@ -1,0 +1,23 @@
+**Compilação**
+**Front-end**
+	- Dentro da pasta 'App\DebitSecurityAPP, executar:
+		- npm install // para baixar as dependencias
+		- ng build // para buildar o projeto
+
+**Back-end**
+	- na pasta raiz, executar 
+		- Para restaurar as dependencias Nuget dos projetos, executar os comandos a seguir:
+			- \> dotnet restore ./Domain/DebitSecurity.Domain/DebitSecurity.Domain.csproj
+			- \> dotnet restore ./Infra/DebitSecurity.Interface/DebitSecurity.Interface.csproj
+			- \> dotnet restore ./Infra/DebitSecurity.DTO/DebitSecurity.DTO.csproj
+			- \> dotnet restore ./Infra/DebitSecurity.Database/DebitSecurity.Database.csproj
+			- \> dotnet restore ./Infra/DebitSecurity.Crosscuttiing/DebitSecurity.Crosscuttiing.csproj
+			- \> dotnet restore ./Service/DebitSecurity.Service/DebitSecurity.Service.csproj
+			- \> dotnet restore ./WebAPI/DebitSecurityAPI/DebitSecurityAPI.csproj
+		- \> dotnet build // isso irá compilar a solução que possui todos os projetos envolvidos no back-end (arquivo 'DebitSecurityCRUD.sln')
+
+**Execução**
+**Front-end**
+	Dentro da pasta 'App\DebitSecurityAPP, executar o comando \> ng serve
+**Back-end**
+	Dentro da pasta 'WebAPI\DebitSecurityAPI, executar o comando \> dotnet run

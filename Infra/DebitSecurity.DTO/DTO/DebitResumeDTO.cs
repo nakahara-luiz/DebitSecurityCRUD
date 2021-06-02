@@ -1,8 +1,11 @@
+using System;
+
 namespace DebitSecurity.DTO
 {
-    public class DebitSecurityResumeDTO
+    public class DebitResumeDTO
     {
-        public string DocumentNumber { get; set; }
+        public Guid DebitId { get; set; }
+        public string SecurityNumber { get; set; }
         public string CustomerName { get; set; }
         public double NumberInstallments { get; set; }
         public double OriginalValue { get; set; }

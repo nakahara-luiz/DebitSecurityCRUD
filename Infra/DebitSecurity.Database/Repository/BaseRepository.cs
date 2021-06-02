@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using DebitSecurity.Database.Context;
 using DebitSecurity.Domain.Entities;
 using DebitSecurity.Interface;
+using Microsoft.EntityFrameworkCore;
 
 namespace DebitSecurity.Database.Repository
 {
@@ -40,10 +41,10 @@ namespace DebitSecurity.Database.Repository
         }
 
         public IList<TEntity> Get() =>
-            _sqlContext.Set<TEntity>().ToList();
+            _sqlContext.Set<TEntity>().AsNoTracking().ToList();
 
         public TEntity Get(Guid id) =>
-            _sqlContext.Set<TEntity>().Find(id);
+            _sqlContext.Set<TEntity>().AsNoTracking().FirstOrDefault(e => e.Id.Equals(id));
 
         public virtual Task<IList<TEntity>> GetComplete()
         {

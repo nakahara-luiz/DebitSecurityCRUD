@@ -16,10 +16,11 @@ namespace DebitSecurity.Service.services
         public DebitSecurityCalculatorService(DateTime referenceDate = new DateTime())
         {
             _referenceDate = referenceDate;
+            _feeUtils = new FeeUtils();
         }
 
-        public IList<DebitSecurityResumeDTO> Calculate(IList<Debit> debitSecurity) {
-            var resumes = new List<DebitSecurityResumeDTO>();
+        public IList<DebitResumeDTO> Calculate(IList<Debit> debitSecurity) {
+            var resumes = new List<DebitResumeDTO>();
 
             foreach (var item in debitSecurity)
                 resumes.Add(Calculate(item));
@@ -27,7 +28,7 @@ namespace DebitSecurity.Service.services
             return resumes;
         }
 
-        public DebitSecurityResumeDTO Calculate(Debit debitSecurity) {
+        public DebitResumeDTO Calculate(Debit debitSecurity) {
             if (debitSecurity == null) 
                 throw new Exception("Título de dívida não informado!");
             if (debitSecurity.Person == null || string.IsNullOrWhiteSpace(debitSecurity.Person.Name)) 
@@ -44,11 +45,11 @@ namespace DebitSecurity.Service.services
             var penaltyValue = _feeUtils.CalculateSingleInterestDiff(firstInstallment.Value, penaltyFee);
             var interestValue = CalculateTotalInterest(debitSecurity.Installments, interestFee);
 
-            return new DebitSecurityResumeDTO {
+            return new DebitResumeDTO {
                 ActualValue = originalValue + penaltyValue + interestValue,
                 CustomerName = debitSecurity.Person.Name,
                 DaysOverDue = Convert.ToInt32(daysOverDue),
-                DocumentNumber = debitSecurity.SecurityNumber,
+                SecurityNumber = debitSecurity.SecurityNumber,
                 NumberInstallments = debitSecurity.Installments.Count(),
                 OriginalValue = originalValue
             };
